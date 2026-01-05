@@ -17,18 +17,18 @@ jobs:
     
     - name: Terraform Init
       run: terraform init
-      working-directory: uploadfileS3
+      working-directory: .
     
     - name: Terraform Plan
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform plan
-      working-directory: uploadfileS3
+      working-directory: .
     
     - name: Terraform Apply
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform apply -auto-approve
-      working-directory: uploadfileS3
+      working-directory: .
