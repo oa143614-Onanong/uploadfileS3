@@ -1,9 +1,347 @@
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My Website Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onanong Autama | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f4f4f4;
+            --text-color: #333;
+            --bg-color: #fff;
+            --section-padding: 60px 20px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, #0056b3 0%, #00c6ff 100%);
+            color: white;
+            padding: 150px 20px 100px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 10px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Sections General */
+        section {
+            padding: var(--section-padding);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: var(--secondary-color);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 1px solid #ddd;
+        }
+
+        /* Experience */
+        .timeline {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 30px;
+            margin-left: 20px;
+        }
+
+        .job {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .job::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            position: absolute;
+            left: -39px;
+            top: 5px;
+        }
+
+        .job h3 {
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .job .company {
+            font-weight: bold;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job .date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .job ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        /* Projects & Education Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Contact/Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Simplified mobile view */
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to my website</h1>
-  <p>Now hosted on Amazon S3!5555555555555555hello</p>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Onanong Autama</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="about">
+        <h1>Onanong Autama</h1>
+        <p>Master's Graduate in Information Technology | DevOps & Cloud Specialist</p>
+        <p>Athens, Ohio | 650-270-9784</p>
+        <a href="mailto:ann.ananong@gmail.com" class="btn">Get in Touch</a>
+    </header>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">AWS Cloud</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">NIST800-53</span>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="timeline">
+            
+            <div class="job">
+                <h3>Research Assistant</h3>
+                <div class="company">Ohio University</div>
+                <div class="date">Jan 2025 - Nov 2025</div>
+                <ul>
+                    <li>Designed a quantitative study using Markov Chains in Python to predict energy availability.</li>
+                    <li>Collected, cleaned, and segmented ten years of historical weather data from Open-Meteo using Python, cutting data-preparation time by half.</li>
+                    <li>Developed Python scripts to automate labeling of raw temperature data into discrete energy states.</li>
+                    <li>Conducted statistical analyses (CDF, ECDF, AIC, BIC) in Jupyter Notebooks with Pandas, NumPy, and Matplotlib.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Server/Infrastructure Engineer (Freelancer)</h3>
+                <div class="company">Becelo</div>
+                <div class="date">Mar 2023 - Aug 2023</div>
+                <ul>
+                    <li>Designed and deployed an E-commerce web application in Kubernetes (AWS EKS), ensuring scalability.</li>
+                    <li>Created Dockerfiles to streamline application deployment and reduce setup time.</li>
+                    <li>Deployed monitoring tools (Prometheus and Grafana) using Helm to enhance system observability.</li>
+                    <li>Managed AWS infrastructure, increasing volume storage on EBS and CPU on EC2 for growing demands.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Integration Engineer</h3>
+                <div class="company">Ericsson</div>
+                <div class="date">Nov 2019 - Sep 2022</div>
+                <ul>
+                    <li>Created Python modules to execute tasks in 20 minutes instead of 50, significantly improving operational efficiency.</li>
+                    <li>Utilized Linux OS to manage server environments and enhance system reliability.</li>
+                    <li>Enabled reading and writing of data in JSON and XML formats using Python.</li>
+                    <li>Monitored network performance and resolved technical customer issues.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" style="background-color: #f9f9f9;">
+        <h2>Featured Projects</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3><i class="fas fa-cloud"></i> Personal Portfolio Website</h3>
+                <p>A cloud-native web project focusing on Infrastructure as Code (IaC) and automation.</p>
+                <ul>
+                    <li>Implemented IaC using <strong>Terraform</strong> to deploy and manage AWS S3 buckets and Route53 DNS services.</li>
+                    <li>Developed <strong>GitHub Actions CI/CD pipelines</strong> to automate HTML file uploads to AWS S3.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education & Certifications</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                <p><strong>Master's Degree, Information and Telecommunication System</strong><br>
+                Ohio University (Aug 2024 - Dec 2025)</p>
+                <hr>
+                <p><strong>B.S., Electrical Engineering</strong><br>
+                Ohio University (Jan 2015 - Jan 2019)</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">
+                        <strong>CKA - Certified Kubernetes Administrator</strong><br>
+                        <small>Linux Foundation</small>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>PCAP - Certified Associate in Python Programming</strong><br>
+                        <small>OpenEDG</small>
+                    </li>
+                    <li>
+                        <strong>Google Digital Marketing & E-commerce Certificate</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:ann.ananong@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 Onanong Autama. All rights reserved.</p>
+        <p>Visit: Onanongautama-portfolio.com</p>
+    </footer>
+
 </body>
 </html>
